@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head lang="ru">
+        <meta charset="UTF-8">
+        <title>ОПРСТ</title>
+
+        <link rel="stylesheet" href="css/temporary.css" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/jquery.countdown.min.js"></script>
+        <script>
+            $(function() {
+                $('.timer').countdown($('.timer').data('date'), function(event) {
+                    if (event.type == 'update') {
+                        $('.timer .time.days').text((event.offset.totalDays < 10) ? '0' + event.offset.totalDays : event.offset.totalDays);
+                        $('.timer .time.hours').text((event.offset.hours < 10) ? '0' + event.offset.hours : event.offset.hours);
+                        $('.timer .time.minutes').text((event.offset.minutes < 10) ? '0' + event.offset.minutes : event.offset.minutes);
+                        $('.timer .time.seconds').text((event.offset.seconds < 10) ? '0' + event.offset.seconds : event.offset.seconds);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <div class="text1">Ваще скоро</div>
+                <div class="text2">Грандиозное открытие канала ОПРСТ 2.0</div>
+                <div class="text3">не пропусти лучшее событие в своей жизни</div>
+            </header>
+
+            <div class="center">
+                <div class="head">до открытия осталось</div>
+                <div class="body">
+                    <img class="logo" src="images/logo.png" />
+
+                    <div class="timer" data-date="2015/04/01">
+                        <span class="time days">00</span>
+                        <span class="dots">:</span>
+                        <span class="time hours">00</span>
+                        <span class="dots">:</span>
+                        <span class="time minutes">00</span>
+                        <span class="dots">:</span>
+                        <span class="time seconds">00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <ul class="socials right">
+                 <li><a class="vk" href="http://vk.com/oprstcomua"></a></li>
+                 <li><a class="tw" href="https://twitter.com/oprst_com_ua"></a></li>
+                 <li><a class="fb" href="http://www.facebook.com/groups/506884652659015/"></a></li>
+                 <li><a class="gp" href="https://plus.google.com/116192054864537564822/posts"></a></li>
+            </ul>
+        </footer>
+    </body>
+</html>
